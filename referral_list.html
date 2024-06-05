@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>推薦人號碼列表</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .table-container {
+            background: #fff;
+            padding: 2rem;
+            margin: 2rem auto;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        th {
+            background: #333;
+            color: #fff;
+        }
+
+        td {
+            background: #fff;
+        }
+
+        .password-container {
+            background: #fff;
+            padding: 2rem;
+            margin: 2rem auto;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .password-container input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .password-container button {
+            width: 100%;
+            padding: 0.5rem;
+            border: none;
+            background: #333;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>推薦人號碼列表</h1>
+    </header>
+
+    <div class="password-container" id="password-container">
+        <input type="password" id="password" placeholder="輸入密碼">
+        <button onclick="checkPassword()">進入</button>
+    </div>
+
+    <div class="table-container" id="table-container" style="display: none;">
+        <table>
+            <thead>
+                <tr>
+                    <th>微信號</th>
+                    <th>推薦人號碼</th>
+                </tr>
+            </thead>
+            <tbody id="referralTableBody">
+                <!-- Data will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === 'DIANAklio') {
+                document.getElementById('password-container').style.display = 'none';
+                document.getElementById('table-container').style.display = 'block';
+                loadReferrals();
+            } else {
+                alert('密碼錯誤');
+            }
+        }
+
+        function loadReferrals() {
+            const referrals = JSON.parse(localStorage.getItem('referrals')) || [];
+            const tableBody = document.getElementById('referralTableBody');
+            tableBody.innerHTML = '';
+
+            referrals.forEach(referral => {
+                const row = document.createElement('tr');
+                const wechatCell = document.createElement('td');
+                const codeCell = document.createElement('td');
+                wechatCell.textContent = referral.wechat;
+                codeCell.textContent = referral.code;
+                row.appendChild(wechatCell);
+                row.appendChild(codeCell);
+                tableBody.appendChild(row);
+            });
+        }
+    </script>
+</body>
+</html>

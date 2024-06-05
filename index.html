@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miss Klio Swimming Classes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            background: #444;
+            color: #fff;
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .centered-content {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .centered-content h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .centered-content p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0.5rem 0;
+        }
+
+        .contact-info {
+            background: #fff;
+            padding: 1rem;
+            margin: 2rem auto;
+            width: 80%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: 2rem auto;
+            border: 1px solid #ccc;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .slides {
+            display: none;
+        }
+
+        .slides img {
+            width: 100%;
+            height: auto;
+        }
+
+        .active {
+            display: block;
+        }
+
+        table {
+            width: 80%;
+            margin: 2rem auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        th {
+            background: #333;
+            color: #fff;
+        }
+
+        td {
+            background: #fff;
+        }
+
+        section#contact {
+            background: #fff;
+            padding: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            width: 80%;
+        }
+
+        form label {
+            display: block;
+            margin: 1rem 0 0.5rem;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            background: #333;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #333;
+            color: #fff;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 8px;
+        }
+
+        .message-sent {
+            font-size: 20px;
+            color: green;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>歡迎來到詩教練的私人游泳課程</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">主頁</a></li>
+            <li><a href="#schedule">時間表</a></li>
+            <li><a href="#contact">留下口訊</a></li>
+            <li><a href="#contact-coach">主動聯絡教練</a></li>
+            <li><a href="promotions.html">優惠</a></li>
+            <li><a href="referral.html">推薦人號碼</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="centered-content">
+        <h2>關於教練的證書及經驗</h2>
+        <p>證書：中國澳門游泳總會-游泳教師證書、體育教育學士學位、RSMC註冊運動心理教練、紅十字會成人急救</p>
+        <p>運動心理咨詢師（中國智慧工程研究會認證）、運動級體育碩士學位（在讀）</p>
+        <p>教學經驗：多年教授游泳經驗、學校體育教師</p>
+
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+            <div class="slides active">
+                <img src="https://www.parenting.com.tw/files/md5/5e/d5/5ed59c9ed0d4742420d651ea623edc04-238471.jpg" alt="Swimming Coach">
+            </div>
+            <div class="slides">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZefC_RnT5nHi8cdkUpe8cgdRGfidEMDiUfw&s" alt="Swimming Lesson">
+            </div>
+            <div class="slides">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI8V0Vw7AO5alFzWrDCNnQTC7e5KUrI_XTdA&s" alt="Coach">
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="centered-content">
+        <div class="contact-info" id="contact-coach">
+            <h2>主動聯絡教練</h2>
+            <p>微信號：Klio_L</p>
+        </div>
+        <h2>時間表（更多的時間可向教練查詢）</h2>
+        <table>
+            <tr>
+                <th> 6月 </th>
+                <th>地點一</th>
+                <th>地點二</th>
+            </tr>
+            <tr>
+                <td>周一</td>
+                <td>巴坡沙 19:00 PM - 22:00 PM</td>
+            </tr>
+            <tr>
+                <td>周三</td>
+                <td>巴坡沙 19:00 PM - 22:00 PM</td>
+            </tr>
+            <tr>
+                <td>周四</td>
+                <td>巴坡沙 18:00 PM - 22:00 PM</td>
+            </tr>
+            <tr>
+                <td>周日</td>
+                <td>氹仔嘉模 10:00 AM - 14:00 PM</td>
+                <td>巴坡沙 17:00 PM - 22:00 PM</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th> 7月 </th>
+                <th>地點一</th>
+                <th>地點二</th>
+            </tr>
+            <tr>
+                <td>周一</td>
+                <td>蓮峰12:00 PM - 15:00 PM</td>
+                <td>巴坡沙17:00 PM - 22:00 PM</td>
+            </tr>
+            <tr>
+                <td>周二</td>
+                <td>巴坡沙17:00 PM - 22:00 PM</td>
+            </tr>
+            <tr>
+                <td>周三</td>
+                <td>巴坡沙17:00 PM - 22:00 PM</td>
+            </tr>
+            <tr>
+                <td>周四</td>
+                <td>巴坡沙17:00 PM - 22:00 PM</td>
+            </tr>
+            <tr>
+                <td>周日</td>
+                <td>氹仔嘉模10:00 AM - 14:00 PM</td>
+                <td>巴坡沙17:00 PM - 22:00 PM</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th> 8月 </th>
+                <th>地點一</th>
+                <th>地點二</th>
+            </tr>
+            <tr>
+                <td>周一</td>
+                <td>蓮峰12:00 PM - 15:00 PM</td>
+                <td>巴坡沙17:00 PM - 22:00 PM</td>
+            </tr>
+            <tr>
+                <td>周二</td>
+                <td>巴坡沙17:00 PM - 22:00 PM</td>
+            </tr>
+            <tr>
+                <td>周三</td>
+                <td>蓮峰12:00 PM - 15:00 PM</td>
+                <td>巴坡沙17:00 PM - 22:00 PM</td>
+            </tr>
+            <tr>
+                <td>周四</td>
+                <td>巴坡沙17:00 PM - 22:00 PM</td>
+            </tr>
+                <tr>
+                <td>周五</td>
+                <td>蓮峰12:00 PM - 15:00 PM</td>
+            </tr>
+
+            <tr>
+                <td>周日</td>
+                <td>氹仔嘉模10:00 AM - 14:00 PM</td>
+                <td>巴坡沙17:00 PM - 22:00 PM</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="contact" class="centered-content">
+        <h2>留下的的口信，讓我回覆你</h2>
+        <form id="contactForm">
+            <label for="name">姓名:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="wechat">電郵或微信號:</label>
+            <input type="text" id="wechat" name="wechat" required>
+            <label for="message">您想查詢的內容或口信:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <div id="messageSent" class="message-sent" style="display: none;">已傳送</div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Swimming Classes</p>
+        <a href="referral.html">推薦人號碼生成器</a>
+        <a href="messages.html">口信列表</a>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const wechat = document.getElementById('wechat').value;
+            const message = document.getElementById('message').value;
+            const timestamp = new Date().toLocaleString();
+            
+            const formData = {
+                name: name,
+                wechat: wechat,
+                message: message,
+                timestamp: timestamp
+            };
+
+            let messages = JSON.parse(localStorage.getItem('contactFormMessages')) || [];
+            messages.push(formData);
+            localStorage.setItem('contactFormMessages', JSON.stringify(messages));
+
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('messageSent').style.display = 'block';
+        });
+
+        // Slideshow script
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.querySelectorAll(".slides");
+            slides.forEach(slide => slide.classList.remove("active"));
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].classList.add("active");
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>
+</body>
+</html>

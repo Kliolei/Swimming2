@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message List</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        .centered-content {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .message-list {
+            background: #fff;
+            padding: 2rem;
+            margin: 2rem auto;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .message-item {
+            border-bottom: 1px solid #dee2e6;
+            padding: 1rem 0;
+        }
+
+        .message-item:last-child {
+            border-bottom: none;
+        }
+
+        .password-form {
+            text-align: center;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            width: 50%;
+            max-width: 400px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .password-form input {
+            width: 80%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        .password-form button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            background: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .password-form button:hover {
+            background: #0056b3;
+        }
+
+        .password-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <section class="centered-content">
+        <h2>口信列表</h2>
+        <div class="password-form">
+            <label for="password">請輸入密碼:</label>
+            <input type="password" id="password" name="password" required>
+            <button onclick="checkPassword()">提交</button>
+        </div>
+        <div id="messages" class="message-list" style="display: none;"></div>
+    </section>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === 'DIANAklio') {
+                document.querySelector('.password-form').style.display = 'none';
+                const messagesDiv = document.getElementById('messages');
+                const messages = JSON.parse(localStorage.getItem('contactFormMessages')) || [];
+
+                if (messages.length === 0) {
+                    messagesDiv.innerHTML = '<p>沒有口信記錄。</p>';
+                } else {
+                    messages.forEach(function(message) {
+                        const messageItem = document.createElement('div');
+                        messageItem.classList.add('message-item');
+                        messageItem.innerHTML = `
+                            <p><strong>姓名:</strong> ${message.name}</p>
+                            <p><strong>電郵或微信號:</strong> ${message.wechat}</p>
+                            <p><strong>口信:</strong> ${message.message}</p>
+                            <p><strong>時間:</strong> ${message.timestamp}</p>
+                        `;
+                        messagesDiv.appendChild(messageItem);
+                    });
+                }
+                messagesDiv.style.display = 'block';
+            } else {
+                alert('密碼錯誤');
+            }
+        }
+    </script>
+</body>
+</html>
